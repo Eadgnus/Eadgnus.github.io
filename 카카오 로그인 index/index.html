@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eadgnus's Portfolio</title>
+    <meta name="auther" content="Eadgnus">
+    <meta name="description" content="지구 이빨빼고 다먹을 개발자">
+    <link rel="icon" type="tmage/png" href="./images/eadgnus_logo.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <script src="https://kit.fontawesome.com/133260cff9.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+    <!-- navbar 시작 -->
+
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <i class="fa-brands fa-square-gitlab" style="color: #fb00ff;"></i>
+            <a href="#">eadgnus</a>
+        </div>
+        <ul class="navbar__menu animated" id="navbar__menu">
+            <li class="navbar__menu__item" id="navbar__menu1"> Home</li>
+            <li class="navbar__menu__item" id="navbar__menu2"> 내 소개</li>
+            <li class="navbar__menu__item" id="navbar__menu3">기술</li>
+            <li class="navbar__menu__item"  id="navbar__menu4">프로젝트</li>
+            <li class="navbar__menu__item" id="navbar__menu5">추천서</li>
+            <li class="navbar__menu__item" id="navbar__menu6">연락주세요</li>
+            <li class="navbar__menu__item" id="navbar__menu7"><a id="kakao-login-btn"></a>
+                <a href="http://developers.kakao.com/logout"></a></li>
+        </ul>
+        <!-- 버튼 시작 -->
+
+        <button class="navbar__toggle-btn" id="navbar__toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- 버튼 끝 -->
+
+    </nav>
+
+    <!-- navbar 끝 -->
+
+
+    <!-- 홈 시작 -->
+
+    <section id="home">
+        <div class="home__container">
+            <img src="./images/profile-removebg-preview (1).png" alt="eadgnus's photo" class="home__avatar">
+            <h1 class="home__title">안녕하세요 준비된 탁성대 입니다!</h1>
+            <h2 class="home__description">서울 영등포구 신길동에 거주하고, 앞으로 월드 클래스 개발자가 될 예정입니다. 응원 부탁드려요!</h2>
+            <button class="home__contact" href="#contact"> 연락주세요!</button>
+        </div>
+    </section>
+
+    <!-- 홈 끝 -->
+
+
+    <!-- 내 소개 시작 -->
+
+    <section id="about" class="section section__container">
+        <h1>내 소개</h1>
+        <p>
+            안녕하세요 세상에서 제일가는 개발자가 될 탁성대 입니다. 저는 실용음악 작곡을 전공하였고, 현재는 KDT 과정을 열심히 듣고 있습니다.
+        </p>
+        <div class="about__majors">
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+                <h2 class="major__title">프론트엔드</h2>
+                <div class="major__description">
+                    HTML, CSS, JavaScript
+                </div>
+            </div>
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <h2 class="major__title">백엔드</h2>
+                <div class="major__description">
+                    Python, Node.js, Django
+                </div>
+            </div>
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h2 class="major__title">인공지능</h2>
+                <div class="major__description">
+                    데이터 분석, 머신러닝, 딥러닝,<br>
+                    Tensorflow, pytorch
+                </div>
+            </div>
+        </div>
+        <div class="about__jobs">
+            <div class="job">
+                <img src="http://www.sunatfood.com/images/company/pr/pr_sf.jpg" alt="썬앳푸드 로고" class="about__jobs__icon">
+                <div class="job__description">
+                    <p class="job__name">
+                        <h3>아르바이트</h3>
+                    </p>
+                    <p class="job__period">
+                        2018.10~2019.03 (주)썬앳푸드 비스트로 서울 <br>
+                        2019.03~2019.08 (주)썬앳푸드 시추안 하우스 <br>
+                        2020.01~2022.03 (주)썬앳푸드 모던눌랑 <br>
+                        2022.04~2022.04 (주)썬앳푸드 모던샤브 하우스
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="about__jobs coffeebean">
+            <div class="job">
+                <img src="https://image.newsis.com/2022/05/06/NISI20220506_0000991244_web.jpg?rnd=20220506152811" alt="" class="about__jobs__icon">
+                <div class="job__description">
+                    <p class="job__name">
+                        <h3>슈퍼바이저</h3>
+                    </p>
+                    <p class="job__period">
+                        2022.06~2023.02 커피빈
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 내 소개 끝 -->
+
+    <!-- 기술 시작 -->
+
+    <section id="skills" class="section">
+        <div class="section__container">
+            <h1>기술</h1>
+            <h2>소개</h2>
+            <p>저는 2개월차 엔지니어로 프론트엔드부터 백엔드, AI에 이르기까지 설계부터 배포, 운영까지 많은 관심을 가지고 있습니다. 새로운 기술과 트렌드를 익히는 것을 좋아하고 팀과 협업하여 작업하는 것을 즐기고 있습니다.</p>
+            <div class="skillset">
+                <div class="skillset__left">
+                    <h3 class="skillset__title">Language</h3>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" value="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>DBMS</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" value="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>Python</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" value="100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>데이터분석</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" value="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>머신러닝/딥러닝</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" value="75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skillset__right">
+                    <div class="tools">
+                        <h3 class="skillset__title">Tools</h3>
+                        <ul class="toos__list">
+                            <li><span>Visual Studio Code</span></li>
+                            <li><span>Colaboratory</span></li>
+                            <li><span>Pycham</span></li>
+                            <li><span>Jupyter Notebook</span></li>
+                            <li><span>Github Desktop</span></li>
+                        </ul>
+                    </div>
+                    <div class="etc">
+                        <h3 class="skillset__title">ETC</h3>
+                        <ul class="ect__list">
+                            <li><span>Math</span></li>
+                            <li><span>Music</span></li>
+                            <li><span>Run</span></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- 기술 끝 -->
+
+    <!-- 프로젝트 시작 -->
+
+    <section id="work" class="section">
+        <div class="section__container">
+            <h1>내 작업실</h1>
+            <h2>프로젝트</h2>
+            <!-- <div class="work__categories">
+                <button class="category__btn selected" id="project" onclick="projectFilter_send()">
+                    전체 <span class="category__count">10</span>
+                </button>
+                <button class="category__btn" id="f">
+                    프론트엔드 <span class="category__count">2</span>
+                </button>
+                <button class="category__btn" id="back">
+                    백엔드 <span class="category__count">3</span>
+                </button>
+                <button class="category__btn" id="ai">
+                    인공지능 <span class="category__count">5</span>
+                </button>
+            </div> -->
+            <div class="work__categories">
+                <button class="category__btn selected" id="category__btn__all">
+                    All <span class="category__count" id=category__count></span>
+                </button>
+                <button class="category__btn" id="category__btn__front">
+                    Frontend <span class="category__count__f" id="category__count__f"></span>
+                </button>
+                <button class="category__btn" id="category__btn__back"> 
+                    Backend <span class="category__count__b" id="category__count__b"></span>
+                </button>
+                <button class="category__btn" id="category__btn__ai">
+                    AI <span class="category__count__a" id="category__count__a"></span>
+                </button>
+            </div>
+            <div class="work__projects f">
+                <a href="#" class="project__f project " target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>유튜브 클론코딩</h3>
+                        <span>유투브와 너무 똑같아서 헷갈림</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project__f project" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>에어 비엔비</h3>
+                        <span>여기에서 예약할 뻔</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project__f project" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>여기어때 클론코딩</h3>
+                        <span>여기어때 백엔드 개발</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__b" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>마켓컬리 클론코딩</h3>
+                        <span>마켓컬리 백엔드 개발</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__b" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>트리플 클론코딩</h3>
+                        <span>트리플 백엔드 개발</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__b" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>유튜브 데이터 분석</h3>
+                        <span>유투브 광고에 대한 데이터 분석</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__b" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>유투브 크롤링</h3>
+                        <span>유투브 영상 주소 및 제목 크롤링</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__a" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>자연어 처리 챗봇</h3>
+                        <span>사람인줄 알았어</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__a" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>캠을 통한 얼굴인식</h3>
+                        <span>인식이 너무 찰짐</span>
+                    </div>
+                    
+                </a>
+                <a href="#" class="project project__a" target="_blank">
+                    <img src="./images/youtube.jpg" alt="유투브 메인" class="project__img">
+                    <div class="project__description">
+                        <h3>캠을 통한 아바타 만들기</h3>
+                        <span>정말 똑같이 만들어 사진인줄</span>
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 끝 -->
+
+    <!-- 추천서 시작 -->
+
+    <section id="testimonials" class="section">
+        <div class="section__container">
+            <h1>추천서</h1>
+            <h3>이분들이 저를 보고 짱먹으라 했어요!</h3>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img src="./images/chatgpt.png" alt="챗지피티" class="testimonial__avartar">
+                    <div class="testimonial__speech-bubble">
+                        <p>탁성대님은 저희 회사에서 프론트엔드 개발자로 일한 적이 있습니다. 그는 열정적이고 창의적이며 뛰어난 문제 해결 능력을 갖추고 있습니다. 그의 커뮤니케이션 능력은 매우 뛰어나며, 고객 및 팀원과의 관계를 유지하는데 큰 기여를 하였습니다.</p>
+                        <p class="name"><a href="#">Mr.ChatGPT</a> / OpenAI</p>
+                    </div>
+                </div> 
+
+                <div class="testimonial">
+                    <img src="./images/kdh.jpg" alt="권도형" class="testimonial__avartar">
+                    <div class="testimonial__speech-bubble">
+                        <p>탁성대님은 저희 프로젝트에서 우수한 작업을 수행했습니다. 항상 일을 할 때 최선을 다하고 팀원들과 협력하여 프로젝트를 성공적으로 완료하는 데 큰 도움을 주었습니다. 그의 코드는 항상 깨끗하고 효율적이며, 다른 개발자들도 쉽게 이행할 수 있었습니다.</p>
+                        <p class="name"><a href="#">권도형</a> / Terra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 추천서 끝 -->
+
+
+
+    <!-- 컨텍트 시작 -->
+    <section id="contact" class="section">
+        <h1 class="contact__title">연락주세요</h1>
+        <h2 class="contact__email">de_crystal@naver.com</h2>
+        <div class="contact__links">
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <p class="contact__rights">
+            2023 eadgnus - All rights reserved
+        </p>
+    </section>
+    <!-- 컨텍트 끝 -->
+    <button class="arrow-up" >
+        <i class="fa-solid fa-angle-up fa-xl" id="arrow"></i>
+    </button>
+    <div id="footer"></div>
+
+
+    <script type='text/javascript' defer>
+      //<![CDATA[
+        // 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('440d4850306225a19c1ade5724a9c73d');
+        // 카카오 로그인 버튼을 생성합니다.
+        Kakao.Auth.createLoginButton({
+          container: '#kakao-login-btn',
+          success: function(authObj) {
+            alert(JSON.stringify(authObj));
+          },
+          fail: function(err) {
+             alert(JSON.stringify(err));
+          }
+        });
+
+    </script>
+</body>
+</html>
