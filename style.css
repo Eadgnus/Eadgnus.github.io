@@ -1,0 +1,733 @@
+@font-face {
+    font-family: 'Humanbumsuk';
+    /* 글씨체 이름 */
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
+    /* 저 링크에서 폰트 정보를 가져오고 woff2는 
+    웹폰트 파일 형식 글꼴내에 라이센스정보같은 메타데이터도 포함되어 있어서  저작권 문제도 해결이 가능하다.*/
+    font-weight: normal;
+    /* 폰트 굵기 */
+    font-style: normal;
+    /* 글씨의 기울임, 이텔릭체 등을 설정 */
+}
+
+@font-face {
+    font-family: 'NexonMaplestory';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonMaplestory';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMaplestory/NexonMaplestoryBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 박스사이징이 content 박스로 기본설정되어 있어서 패딩이나 마진 보더 속성을 주게되면 원래크기보다 커질수도 있는데 보더박스 설정을 하게 되면 원래 설정한 사이즈에서 커지는것을 방지할 수 있다. */
+
+:root {
+    /* 변수로 지정하여 사용할수 있다. var()안에 넣어서 사용가능 */
+    /* 폰트 색상 */
+    --color-white: white;
+    /*변수이름*/
+    --color-black: black;
+    --color-mypink: rgb(250, 187, 208);
+    --color-mypink-bold: rgb(238, 141, 173);
+    --color-gray: rgba(70, 70, 70, 0.781);
+    --color-gold: gold;
+    --color-orange: orange;
+    --color-blue: deepskyblue;
+    --color-myyellow: #FFFFB1;
+
+    /* 폰트 사이즈 */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 14px;
+    --font-micro: 12px;
+
+    /* 애니메이션 설정 */
+    --animation-duration: 300ms;
+    /* 0.3초 */
+
+    /**/
+    --size-border-radius: 4px;
+}
+
+
+body {
+    /* 바디 태그 안에 전부 적용 */
+    font-family: 'Humanbumsuk';
+    /* 폰트는 휴먼 범석체 */
+    margin: 0;
+    /* 마진 0으로 딱붙여서 */
+    font-weight: 700;
+    /* 폰트의 굵이는 700정도 */
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄 삭제 */
+    color: var(--color-white);
+    /* 변수로 지정해둔 색상 함수로 사용하기 */
+}
+
+ul {
+    padding-left: 0;
+}
+
+/* 왼쪽으로 들여쓰기 되어있는거 0 주기 */
+li {
+    list-style: none;
+}
+
+/* 리스트에 *으로 꾸며져있는거 없애기 */
+
+button {
+    /* 버튼에 전체적용 */
+    background-color: var(--color-black);
+    /* 배경색 검정 */
+    border: none;
+    /* 테두리 없음 */
+    outline: none;
+    /* 테두리 선 없음 */
+    cursor: pointer;
+    /* 마우스 커서의 모양을 변경할 수 있음. */
+}
+
+h1 {
+    /*  h1 태그 전체적용  */
+    font-size: var(--font-large);
+    /* 변수로 지정해둔값 사용 */
+    font-weight: bold;
+    /* 폰트 굵기는 굵게 */
+    color: var(--color-black);
+    /* 폰트 색상은 검정 */
+    margin: 16px 0px;
+    /* 마진은 상하 값만 16px 좌우는 0px */
+}
+
+h2 {
+    font-size: var(--font-medium);
+    /* 폰트크기는 미디움 */
+    color: var(--color-black);
+    /* 색상은 검정 */
+    margin: 8px 0px;
+    /* 상하 8px 좌우 0px 간격 */
+}
+
+h3 {
+    font-family: NexonMaplestory;
+    font-size: var(--font-small);
+    /* 위와 동일 */
+    color: var(--color-black);
+    margin: 8px 0px;
+}
+
+p {
+    font-size: var(--font-regular);
+    /* 위와 동일 */
+    color: var(--color-black);
+    margin: 4px 0px;
+}
+
+
+/* navbar */
+
+#navbar {
+    /* 아이디가 navbar인 부분에 설정
+    position 속성은 태그를 어떻게 위치시킬지를 정의하며, 아래의 5가지 값을 갖습니다.
+
+static: 기본값, 다른 태그와의 관계에 의해 자동으로 배치되며 위치를 임의로 설정해 줄 수 없습니다.
+absolute: 절대 좌표와 함께 위치를 지정해 줄 수 있습니다.
+relative: 원래 있던 위치를 기준으로 좌표를 지정합니다.
+fixed: 스크롤과 상관없이 항상 문서 최 좌측상단을 기준으로 좌표를 고정합니다.
+inherit: 부모 태그의 속성값을 상속받습니다. */
+    position: fixed;
+    /* 위치 고정되어 스크롤을 내려도 메뉴바가 보이게 */
+    width: 100%;
+    /* 넓이 100% */
+    display: flex;
+    /* 내용물의 width 만큼만 공간을 차지하여 옆으로 배치할수 있게 함 */
+    justify-content: space-between;
+    /* 좌우 정렬을 양 끝을 기준으로 배치 */
+    /* justify content는 플렉스한요소를 수평방향으로 어떻게 정렬할지 정해줌 */
+    align-items: center;
+    /* 플렉스 요소의 수직방향 정렬 */
+    padding: 16px;
+    /* 안쪽으로 여유공간 */
+    background-color: var(--color-mypink);
+    transition: all var(--animation-duration) ease-in-out;
+    /* all=> 모든 적용값에 적용, var()=> 변수값으로 준 시간 0.3초동안 변화가 일어남, ease-in-out => 천천히 - 보통속도로 - 천천히 변함*/
+    z-index: 10;
+    /* z축으로 우선순위를 결정 -> 앞쪽으로 보여질 것의 우선순위 설정 -> 숫자가 높을수록 위쪽에 덮여진다. */
+}
+
+#navbar.navbar--bord {
+    background-color: var(--color-mypink-bold);
+}
+
+.navbar__logo {
+    font-size: var(--font-medium);
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.navbar__menu {
+    display: flex;
+    /* flex는 width값을 기준으로 그 내용물만큼의 공간을 차지하고 옆으로 땡겨온다. */
+    margin: 0;
+    /* 요소들 사이의 공간 0 */
+    transition-duration: 1s;
+    /* 변화가 1초동안 일어남 */
+}
+
+.navbar__menu__item {
+    padding: 8px 12px;
+    /* 내부여백 상하 8px 좌우 12px */
+    margin: 0 4px;
+    /* 요소들 외부 공백 상하0 좌우4px */
+    color: var(--color-white);
+    cursor: pointer;
+    /* 커서의 모양이 손가락모양으로 바뀜 */
+    border-radius: var(--size-border-radius);
+    /* 모서리 굴곡 */
+}
+
+.navbar__menu__item.active {
+    /* 클릭 되었을 때 */
+    border: 1px solid var(--color-white);
+    /* 테두리 1px 선으로 흰색 */
+}
+
+.navbar__menu__item:hover {
+    /* 마우스가 올려졌을 때 */
+    border-color: var(--color-white);
+    background-color: var(--color-mypink-bold);
+    border-radius: 10%;
+    /* 외각선 굴곡 10% */
+}
+
+.navbar__toggle-btn {
+    position: absolute;
+    /* 위치 좌표값 고정 */
+    top: 24px;
+    /* 위로부터 24px 떨어짐 */
+    right: 32px;
+    /* 오른쪽으로 부터 32px 떨어짐 */
+    font-size: 24px;
+    /* 폰트 사이즈 24px */
+    color: var(--color-white);
+    display: none;
+    /* 영역을 차지하지 않고 보이지 않음 */
+}
+
+/* 홈 */
+#home {
+    background: url(./images/background.png) center/cover no-repeat;
+    /* 사진첨부, 가운데부분에 사진의 중앙이 오게, 영역을 꽉채워서, 반복 없이 */
+    padding: 40px;
+    /* 내부 공백 30px */
+    padding-top: 120px;
+    /* 위로부터 120px */
+    text-align: center;
+    /* 글씨 가운데 정렬 */
+}
+
+.home__avatar {
+    width: 400px;
+    /* 가로 400px */
+    border-radius: 50%;
+    /* 테두리 굴곡 50% */
+    border: 2px solid var(--color-mypink);
+}
+
+.home__contact {
+    color: var(--color-white);
+    font-size: var(--font-regular);
+    font-weight: bold;
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-white);
+    border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+    background-color: var(--color-mypink);
+}
+
+/* section 공통 */
+.section {
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+}
+
+.section__container {
+    max-width: 1200px;
+    /* 최대 가로 길이 1200px */
+    margin: auto;
+    /* 상하 좌우 가운데 정렬 */
+}
+
+/* 내 소개 */
+.about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
+.major__icon {
+    width: 170px;
+    height: 170px;
+    line-height: 170px;
+    font-size: 70px;
+    margin: auto;
+    color: var(--color-mypink);
+    border: 1px solid var(--color-mypink);
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.major__icon i {
+    transition: all var(--animation-duration) ease;
+}
+
+.major__icon:hover i {
+    color: var(--color-mypink-bold);
+    transform: rotate(-7deg) scale(1.1);
+}
+
+.major__title,
+.major__description {
+    color: var(--color-gray);
+}
+
+.major__description {
+    font-size: var(--font-small);
+}
+
+.job {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.job__description {
+    margin: 0 16px;
+    /* 상하 0 좌우 16px */
+    text-align: left;
+    /* 왼쪽 정렬 */
+}
+
+.job__name,
+.job__period {
+    color: var(--color-gray);
+}
+
+.job__name {
+    font-size: var(--font-small);
+}
+
+.job__period {
+    font-size: var(--font-micro);
+}
+
+.about__jobs {
+    float: left;
+    /* 왼쪽으로 붙이고 뒤에꺼 땡기기 */
+    margin-bottom: 20px;
+}
+
+.coffeebean {
+    float: right;
+    /* 오른쪽으로 붙여서 뒤에땡기기 */
+}
+
+.about__jobs__icon {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* 기술 */
+#skills {
+    background-color: var(--color-myyellow);
+    clear: both;
+}
+
+/* clear both float 영향 안받게하기 */
+
+.skillset {
+    display: flex;
+    /* width의 크기만큼만 공간을 차지 하고 배치 */
+    background-color: var(--color-gray);
+    color: var(--color-mypink);
+    margin: 20px 0;
+}
+
+.skillset__title {
+    color: var(--color-white);
+}
+
+.skillset__left {
+    flex-basis: 60%;
+    /* flex요소의 기본 크기를 설정 */
+    background-color: var(--color-black);
+    padding: 20px 40px;
+    /* 안쪽 여백 상하 20px 좌우 40px */
+}
+
+.skill {
+    margin-bottom: 32px;
+}
+
+/* 영역의 아래 쪽으로 공간 32px만큼 두기 */
+
+.skill__description {
+    display: flex;
+    /* 컨텐츠의 크기만큼 영역을 가지고 나머지 공간을 꽉차게 */
+    justify-content: space-between;
+    /* 양쪽끝을 기준으로 flex요소들을 정렬 */
+}
+
+.skill__bar {
+    /* 그래프의 회색 배경바 */
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-gray);
+}
+
+.skill__value {
+    height: 3px;
+    background-color: var(--color-orange);
+    width: 0%;
+}
+
+.skill__value.see {
+    transition-property: all;
+    transition-duration: 3s;
+    transition-timing-function: ease;
+}
+
+.skillset__right {
+    /* tools, etc 부분*/
+    flex-basis: 40%;
+    /* 기본 width를 40%로 설정 */
+}
+
+.tools {
+    padding: 20px;
+    background-color: var(--color-gray);
+}
+
+.etc {
+    padding: 20px;
+}
+
+
+/* 내 작업실 */
+
+.work__categories {
+    margin: 40px;
+}
+
+.category__btn {
+    height: 50px;
+    border: 1px solid var(--color-gray);
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+    color: var(--color-white);
+}
+
+.selected,
+.category__btn:hover {
+    background-color: var(--color-mypink-bold);
+    color: var(--color-white);
+}
+
+.category__btn.selected .category__count,
+.category__btn:hover .category__count,
+.category__btn.selected .category__count__f,
+.category__btn:hover .category__count__f,
+.category__btn.selected .category__count__b,
+.category__btn:hover .category__count__b,
+.category__btn.selected .category__count__a,
+.category__btn:hover .category__count__a,
+.category__btn.selected .category__count__craw,
+.category__btn:hover .category__count__craw {
+    opacity: 1;
+    top: 0;
+}
+
+.category__count,
+.category__count__f,
+.category__count__b,
+.category__count__a,
+.category__count__craw {
+    background-color: var(--color-mypink);
+    margin-bottom: 0;
+    border-radius: 50%;
+    color: var(--color-white);
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    left: 4px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.work__projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
+}
+
+.project.invisible {
+    display: done;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: var(--color-mypink);
+}
+
+.project__img {
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+}
+
+.project__description {
+    position: absolute;
+    background-color: var(--color-mypink-bold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--animation-duration) ease-in;
+}
+
+.project:hover .project__description {
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project__description h3 {
+    color: var(--color-white);
+}
+
+.project__description h3:after {
+    /* 이 뒤부터 처리하겠다는 뜻 */
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    margin-left: -12px;
+    margin-top: 8px;
+    background-color: var(--color-myyellow);
+}
+
+/* 추천서 */
+#testimonials {
+    background-color: var(--color-myyellow);
+}
+
+.testimonials {
+    margin: 40px;
+}
+
+.testimonial {
+    display: flex;
+    margin: 32px 0;
+}
+
+.testimonial__avartar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.testimonial__avartar:nth-child(1) {
+    margin-right: 30px;
+}
+
+.testimonial__avartar:nth-child(1) {
+    margin-left: 30px;
+}
+
+.testimonial__speech-bubble {
+    padding: 18px;
+    background-color: var(--color-white);
+    border-radius: var(--size-border-radius);
+    margin: auto;
+}
+
+.testimonial__speech-bubble p {
+    color: var(--color-gray);
+}
+
+.testimonial__speech-bubble a {
+    color: var(--color-mypink);
+}
+
+/* 연락주세요 */
+
+#contact {
+    background-color: var(--color-mypink);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+    color: var(--color-white)
+}
+
+.contact__title {
+    margin: 32px 0;
+}
+
+.contact__links {
+    font-size: var(--font-large);
+    margin: 24px 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.contact__links i:hover {
+    transform: scale(1.1);
+    color: var(--color-myyellow);
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    color: var(--color-white);
+    background-color: var(--color-mypink);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.invisible {
+    display: none;
+}
+
+
+/* 모바일 버전 */
+@media screen and (max-width: 768px) {
+    .navbar__toggle-btn {
+        display: block;
+        background-color: var(--color-mypink);
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+        /* 여기에 패딩을 줌으로 써 토글 키를 가운데정렬로 맞춤 */
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        visibility: hidden;
+        /* 히든으로 감췄다가 visible로 보여주며 트랜지션으로 애니메이션 효과 노림 */
+        height: 0vh;
+        /* 메뉴바 배경 높이 0에서 */
+        transition: all 0.15s;
+        /* 모든 변화가 0.15초 안에 */
+        opacity: 0;
+        /* 투명도는 0에서 1로 바꿔줄건데 글씨에 적용됨 */
+        font-size: 6px;
+        /* 폰트사이즈도 변화 시켜주어야 박스보다 글씨가 먼저 나와있는 상황이 없음 */
+    }
+
+    .act {
+        visibility: visible;
+        height: 31vh;
+        /* 높이를 글자가 먼저 나오지 않을만큼 적당히 키워줌 */
+        opacity: 1;
+        /* 투명도 다시 1로 */
+        font-size: 24px;
+        /* 폰트사이즈 키워줌 */
+
+    }
+
+    .about__majors {
+        flex-direction: column;
+    }
+
+    .major {
+        margin-bottom: 40px;
+    }
+
+    .skillset {
+        flex-direction: column;
+    }
+
+    .project {
+        flex-grow: 1;
+    }
+
+    .testimonial__avartar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .coffeebean {
+        float: left;
+    }
+}
+
+/*  z-index 주기 */
+h3 {
+    z-index: 9999;
+}
