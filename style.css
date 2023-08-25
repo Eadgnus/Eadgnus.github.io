@@ -171,7 +171,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     /* 플렉스 요소의 수직방향 정렬 */
     padding: 16px;
     /* 안쪽으로 여유공간 */
-    background-color: var(--color-mypink);
+    /* background-color: ; */
     transition: all var(--animation-duration) ease-in-out;
     /* all=> 모든 적용값에 적용, var()=> 변수값으로 준 시간 0.3초동안 변화가 일어남, ease-in-out => 천천히 - 보통속도로 - 천천히 변함*/
     z-index: 10;
@@ -218,7 +218,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 .navbar__menu__item:hover {
     /* 마우스가 올려졌을 때 */
     border-color: var(--color-white);
-    background-color: var(--color-mypink-bold);
+    background-color: #382B5A;
     border-radius: 10%;
     /* 외각선 굴곡 10% */
 }
@@ -239,7 +239,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 /* 홈 */
 #home {
-    background: url(./images/background.png) center/cover no-repeat;
+    background: url(./images/background.jpg) center/cover no-repeat;
     /* 사진첨부, 가운데부분에 사진의 중앙이 오게, 영역을 꽉채워서, 반복 없이 */
     padding: 40px;
     /* 내부 공백 30px */
@@ -247,14 +247,24 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     /* 위로부터 120px */
     text-align: center;
     /* 글씨 가운데 정렬 */
+    height: 100vh;
+
 }
 
+
+
 .home__avatar {
-    width: 400px;
+    margin-top: 100px;
+    width: 20vw;
     /* 가로 400px */
     border-radius: 50%;
     /* 테두리 굴곡 50% */
-    border: 2px solid var(--color-mypink);
+    border: 2px solid var(--color-white);
+}
+
+.home__description,
+.home__title {
+    color: var(--color-white);
 }
 
 .home__contact {
@@ -268,7 +278,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 }
 
 .home__contact:hover {
-    background-color: var(--color-mypink);
+    background-color: #382B5A;
 }
 
 /* section 공통 */
@@ -278,18 +288,34 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     margin: auto;
 }
 
+#about {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 100px;
+    background-image: url(./images/background2.jpg);
+    background-size: cover;
+}
+
 .section__container {
-    max-width: 1200px;
+    width: 100vw;
     /* 최대 가로 길이 1200px */
-    margin: auto;
+    /* margin: 0 auto; */
     /* 상하 좌우 가운데 정렬 */
+}
+
+.section__container>p,
+.section__container>h1,
+.section__container>div,
+.section__container>h2 {
+    color: white;
 }
 
 /* 내 소개 */
 .about__majors {
     display: flex;
+    width: 50%;
     justify-content: space-between;
-    margin: 80px 0;
+    margin: 80px auto;
 }
 
 .major__icon {
@@ -298,8 +324,8 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     line-height: 170px;
     font-size: 70px;
     margin: auto;
-    color: var(--color-mypink);
-    border: 1px solid var(--color-mypink);
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
     border-radius: 50%;
     margin-bottom: 16px;
 }
@@ -315,7 +341,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 .major__title,
 .major__description {
-    color: var(--color-gray);
+    color: var(--color-white);
 }
 
 .major__description {
@@ -324,8 +350,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 .job {
     display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
+    margin: auto;
 }
 
 .job__description {
@@ -335,6 +360,11 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     /* 왼쪽 정렬 */
 }
 
+.job__description>p,
+.job__description>h3 {
+    color: white;
+}
+
 .job__name,
 .job__period {
     color: var(--color-gray);
@@ -342,6 +372,11 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 .job__name {
     font-size: var(--font-small);
+}
+
+.width50 {
+    width: 50%;
+    margin: auto;
 }
 
 .job__period {
@@ -367,7 +402,10 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 /* 기술 */
 #skills {
-    background-color: var(--color-myyellow);
+    padding-top: 20vh;
+    height: 100vh;
+    background-image: url(./images/background3.jpg);
+    background-size: cover;
     clear: both;
 }
 
@@ -375,10 +413,11 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 .skillset {
     display: flex;
+    width: 90%;
+    margin-left: 2vw;
     /* width의 크기만큼만 공간을 차지 하고 배치 */
     background-color: var(--color-gray);
     color: var(--color-mypink);
-    margin: 20px 0;
 }
 
 .skillset__title {
@@ -442,6 +481,13 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 
 /* 내 작업실 */
+#work {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 100px;
+    background: url(./images/background4.jpg) no-repeat;
+    background-size: cover;
+}
 
 .work__categories {
     margin: 40px;
@@ -458,7 +504,8 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 .selected,
 .category__btn:hover {
-    background-color: var(--color-mypink-bold);
+    opacity: 0.8;
+    background-color: gray;
     color: var(--color-white);
 }
 
@@ -481,7 +528,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 .category__count__b,
 .category__count__a,
 .category__count__craw {
-    background-color: var(--color-mypink);
+    background-color: #382B5A;
     margin-bottom: 0;
     border-radius: 50%;
     color: var(--color-white);
@@ -497,6 +544,8 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 }
 
 .work__projects {
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -519,7 +568,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     width: 280px;
     height: 250px;
     margin: 2px;
-    background-color: var(--color-mypink);
+    background-color: var(--color-gray);
 }
 
 .project__img {
@@ -530,7 +579,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
 .project__description {
     position: absolute;
-    background-color: var(--color-mypink-bold);
+    background-color: var(--color-gray);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -611,21 +660,25 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 /* 연락주세요 */
 
 #contact {
-    background-color: var(--color-mypink);
+    background-color: var(--color-black);
+    height: 23vh;
+    margin: 0;
+    padding: 10px;
 }
 
 .contact__title,
 .contact__email,
 .contact__rights {
-    color: var(--color-white)
+    color: var(--color-white);
+    font-size: 15px;
 }
 
 .contact__title {
-    margin: 32px 0;
+    font-size: 30px;
 }
 
 .contact__links {
-    font-size: var(--font-large);
+    font-size: var(--font-medium);
     margin: 24px 0;
     transition: all var(--animation-duration) ease-in;
 }
@@ -641,9 +694,9 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
     right: 50px;
     width: 70px;
     height: 70px;
-    font-size: 50px;
+    font-size: 30px;
     color: var(--color-white);
-    background-color: var(--color-mypink);
+    background-color: var(--color-black);
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
@@ -707,6 +760,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 
     .major {
         margin-bottom: 40px;
+        display: flex;
     }
 
     .skillset {
