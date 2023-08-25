@@ -56,7 +56,7 @@ window.addEventListener('scroll', function () {
     const about = this.document.querySelector('#about').getBoundingClientRect().top;
     const skills = this.document.querySelector('#skills').getBoundingClientRect().top;
     const work = this.document.querySelector('#work').getBoundingClientRect().top;
-    const testimonials = this.document.querySelector('#testimonials').getBoundingClientRect().top;
+    // const testimonials = this.document.querySelector('#testimonials').getBoundingClientRect().top; 추천서 부분
     const contact = this.document.querySelector('#contact').getBoundingClientRect().top;
     const footer = this.document.querySelector('#footer').getBoundingClientRect().top;
 
