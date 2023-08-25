@@ -126,6 +126,14 @@ window.addEventListener("scroll", () => {
     }
 })
 
+//연락주세요 버튼 이동시키기
+const move_contact = document.querySelector('.home__contact');
+move_contact.addEventListener('click', () => {
+    const contactSection = document.getElementById("contact");
+    contactSection.scrollIntoView({ behavior: "smooth" });
+});
+
+
 //현식
 const move = function (e) {
     let choice = e.target.innerText;
