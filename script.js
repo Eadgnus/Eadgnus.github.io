@@ -65,7 +65,7 @@ window.addEventListener('scroll', function () {
     const aboutTop = posY + about;
     const skillsTop = posY + skills;
     const workTop = posY + work;
-    const testimonialsTop = posY + testimonials;
+    // const testimonialsTop = posY + testimonials;
     const contactTop = posY + contact - 500;
 
 

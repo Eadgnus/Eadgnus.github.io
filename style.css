@@ -483,7 +483,7 @@ inherit: 부모 태그의 속성값을 상속받습니다. */
 /* 내 작업실 */
 #work {
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     padding-top: 100px;
     background: url(./images/background4.jpg) no-repeat;
     background-size: cover;
