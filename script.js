@@ -92,13 +92,13 @@ window.addEventListener('scroll', function () {
         menus.forEach(m => m.classList.remove('active'));
         skills__menu.classList.add('active');
 
-    } else if (posY >= workTop && posY < testimonialsTop) {
+    } else if (posY >= workTop && posY < contactTop) {
         menus.forEach(m => m.classList.remove('active'));
         work__menu.classList.add('active');
 
-    } else if (posY >= testimonialsTop && posY < contactTop) {
-        menus.forEach(m => m.classList.remove('active'));
-        chuchun__menu.classList.add('active');
+        // } else if (posY >= testimonialsTop && posY < contactTop) {
+        //     menus.forEach(m => m.classList.remove('active'));
+        //     chuchun__menu.classList.add('active');
 
     } else if (posY >= contactTop && posY <= totalHeight) {
         menus.forEach(m => m.classList.remove('active'));
